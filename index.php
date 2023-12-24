@@ -22,7 +22,8 @@
             height: 10px;
         }
 
-        .topic_button, .cat_button {
+        .topic_button,
+        .cat_button {
             text-decoration: none;
             color: #000;
             transition: all 0.2s ease-out allow-discrete;
@@ -31,14 +32,16 @@
             padding: 5px 10px;
         }
 
-        .topic_button:hover, .cat_button:hover {
+        .topic_button:hover,
+        .cat_button:hover {
             background-color: #0f0f0f;
             color: #fff
         }
     </style>
 </head>
 
-<?php
+<body>
+    <?php
     include './connect.php';
     include './header.php';
     // SQL-запрос для выборки всех данных из таблицы
@@ -49,15 +52,15 @@
         // Выводим данные
         while($row = mysqli_fetch_assoc($result)) {
             ?>
-<div class='container'>
-    <h2 class='field'><?=  $row["cat_name"] ?></h2>
-    <h4 class='field'><?= $row["cat_description"] ?></h4>
-    <a class="topic_button" href="./create_topic.php?cat_id=<?=  $row["cat_id"] ?>">edit</a>
-    <a class="cat_button" href=".showCategory/.php?cat_id=<?=  $row["cat_id"] ?>">Show</a>
+    <div class='container'>
+        <h2 class='field'><?=  $row["cat_name"] ?></h2>
+        <h4 class='field'><?= $row["cat_description"] ?></h4>
+        <a class="topic_button" href="./create_topic.php?cat_id=<?=  $row["cat_id"] ?>">edit</a>
+        <a class="cat_button" href=".showCategory/.php?cat_id=<?=  $row["cat_id"] ?>">Show</a>
 
-</div>
-<hr>
-<?php
+    </div>
+    <hr>
+    <?php
       }
       if (isset($_GET['cat_id'])) {
          $cat_id = $_GET['cat_id'];
@@ -75,7 +78,6 @@
          }
      } else {
          echo 'Не передан ID записи';
-         exit();
      }
       
     
@@ -86,11 +88,11 @@
         echo "0 results";
     }
 
-
     include './footer.php';
+   
 ?>
 
-
+</body>
 
 
 </html>
