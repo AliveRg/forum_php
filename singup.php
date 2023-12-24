@@ -11,48 +11,49 @@
             font-family: Arial, sans-serif;
             font-size: 20px;
         }
-      form {
-         max-width: 400px;
-      }
 
-      form div {
-        display: flex;
-        gap: 10px;
-      }
+        form {
+            max-width: 400px;
+        }
 
-      label {
-        font-family: Arial, sans-serif;
-         display: block;
-         margin-bottom: 8px;
-      }
+        form div {
+            display: flex;
+            gap: 10px;
+        }
 
-      input {
-         width: 100%;
-         padding: 8px;
-         margin-bottom: 16px;
-      }
+        label {
+            font-family: Arial, sans-serif;
+            display: block;
+            margin-bottom: 8px;
+        }
 
-      input[type="submit"] {
-         background-color: #4CAF50;
-         border-radius: 7px;
-         color: #fff;
-         border: none;
-         padding: 10px;
-         cursor: pointer;
-      }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+        }
 
-      a {
-        width: fit-content;
-        display: inline-block;
-        padding: 10px;
-        background-color: #4CAF50;
-        border-radius: 7px;
-        text-decoration: none;
-        color: #fff;
-        font-family: Arial, sans-serif;
-        font-size: 18px;
-      }
-   </style>
+        input[type="submit"] {
+            background-color: #4CAF50;
+            border-radius: 7px;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        a {
+            width: fit-content;
+            display: inline-block;
+            padding: 10px;
+            background-color: #4CAF50;
+            border-radius: 7px;
+            text-decoration: none;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+    </style>
 </head>
 
 <body>
@@ -76,8 +77,13 @@
            
             if ($mysqli->query($sql_insert_data) === TRUE) {
                 echo "Data inserted successfully";
+                ?>
+
+    <a class="./index.php" href="./index.php"> на главную</a>
+    <?php
             } else {
                 echo "Error inserting data: " . $conn->error;
+
             }
         }
 
