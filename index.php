@@ -41,6 +41,7 @@
 </head>
 
 <body>
+
     <?php
     include './connect.php';
     include './header.php';
@@ -52,34 +53,21 @@
         // Выводим данные
         while($row = mysqli_fetch_assoc($result)) {
             ?>
+
     <div class='container'>
         <h2 class='field'><?=  $row["cat_name"] ?></h2>
         <h4 class='field'><?= $row["cat_description"] ?></h4>
-        <a class="topic_button" href="./create_topic.php?cat_id=<?=  $row["cat_id"] ?>">edit</a>
-        <a class="cat_button" href=".showCategory/.php?cat_id=<?=  $row["cat_id"] ?>">Show</a>
+        <div class="" style="display: flex;   justify-content: space-between; width: 100%;">
+
+            <a class="topic_button" href="./create_topic.php?cat_id=<?=  $row["cat_id"] ?>">edit</a>
+            <a class="cat_button" href="./Category.php?cat_id=<?=  $row["cat_id"] ?>">Show</a>
+        </div>
 
     </div>
     <hr>
     <?php
       }
-      if (isset($_GET['cat_id'])) {
-         $cat_id = $_GET['cat_id'];
      
-         // SQL-запрос для выборки данных по ID
-         $sql_select_data = "SELECT * FROM topics WHERE topic_cat=$cat_id";
-         $result = $mysqli->query($sql_select_data);
-     
-         // Проверяем, есть ли данные
-         if ($result->num_rows > 0) {
-             $row = $result->fetch_assoc();
-         } else {
-             echo 'Запись не найдена';
-             exit();
-         }
-     } else {
-         echo 'Не передан ID записи';
-     }
-      
     
     
        
