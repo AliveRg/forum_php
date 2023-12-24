@@ -36,7 +36,7 @@
 
       }
 
-      nav a {
+      a {
 
          color: #fff;
          text-decoration: none;
@@ -58,6 +58,10 @@
 </head>
 
 <body>
+   <?php
+      include './connect.php';
+      
+   ?>
 
    <header>
       <div class="header_wrapper">
@@ -69,12 +73,34 @@
             <a href="./create_cat.php">Создание категории</a>
          </nav>
          <div class="button-container">
-            <button onclick="location.href='./singup.php'">Регистрация</button>
-            <button onclick="location.href='./signin.php'">Вход</button>
+
+            <?php 
+               if($_SESSION['signed_in']) {
+                  ?>
+                  <div style="display: flex; gap: 10px">
+                     <p>Hello, <?= $_SESSION['user_name']?></p>
+                     <button onclick="location.href='./signout.php'">Sign out</a>
+                  </div>
+                  
+
+                  <?php
+               }
+               else {
+               ?> 
+                  <button onclick="location.href='./singup.php'">Регистрация</button>
+                  <button onclick="location.href='./signin.php'">Вход</button>
+            <?php
+               }
+            ?>
+            
          </div>
       </div>
    </header>
 
+
+   <?php
+   
+   ?>
    <!-- Остальной контент страницы -->
 
 </body>
