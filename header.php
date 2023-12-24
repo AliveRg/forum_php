@@ -66,9 +66,10 @@
             <a href="#">Главная</a>
             <a href="#">О нас</a>
             <a href="#">Контакты</a>
+            <a href="./create_cat.php">Создание категории</a>
          </nav>
          <div class="button-container">
-            <button onclick="location.href='#'">Регистрация</button>
+            <button onclick="location.href='./singup.php'">Регистрация</button>
             <button onclick="location.href='#'">Вход</button>
          </div>
       </div>
