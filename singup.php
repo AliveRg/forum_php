@@ -1,23 +1,24 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <?php
     include './connect.php';
 ?>
-    <h3>Sign up</h3>
-
-    <form action="" method="POST" name="singup">
-        Username: <input  type="text" name="user_name"/>
-        Password: <input type="text" name="user_pass">
-        Password again <input type="text" name="user_pass_check">
-        E-mail: <input type="text" name="user_email">
-        Birthday: <input type="datetime-local" name="user_date">
-        <input type="submit" value="Create user">
-    </form>
 
 
-<?php
 
-        if (isset($_POST['singup'])) {
+    <?php
+
+        if (isset($_GET['singup'])) {
             // Получаем данные из формы
-            $user_name = $_POST['user_name'];
+            $user_name = $_GET['user_name'];
             $user_pass = $_POST['user_pass'];
             $user_pass_check = $_POST['user_pass_check'];
             $user_email = $_POST['user_email'];
@@ -87,3 +88,22 @@
     
 
 ?>
+
+    <h3>Sign up</h3>
+
+    <form action="" method="get" name="singup">
+        <label for="user_name">Username:</label>
+        <input type="text" name="user_name" />
+        <label for="user_pass">Password:</label>
+        <input type="text" name="user_pass">
+        <label for="user_pass_check">Password again:</label>
+        <input type="text" name="user_pass_check">
+        <label for="user_email">E-mail:</label>
+        <input type="email" name="user_email">
+        <label for="user_date">Birthday:</label>
+        <input type="date" name="user_date">
+        <input type="submit" value="Create user" name="singup">
+    </form>
+</body>
+
+</html>

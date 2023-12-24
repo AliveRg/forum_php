@@ -36,7 +36,7 @@
 <body>
    <?php
        include './connect.php';
-
+       include './header.php';
 ?>
    <h2>Добавить категорию</h2>
 

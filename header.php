@@ -63,7 +63,7 @@
       <div class="header_wrapper">
          <h1>Форум</h1>
          <nav>
-            <a href="#">Главная</a>
+            <a href="./index.php">Главная</a>
             <a href="#">О нас</a>
             <a href="#">Контакты</a>
             <a href="./create_cat.php">Создание категории</a>
