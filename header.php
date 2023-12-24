@@ -70,7 +70,7 @@
          </nav>
          <div class="button-container">
             <button onclick="location.href='./singup.php'">Регистрация</button>
-            <button onclick="location.href='#'">Вход</button>
+            <button onclick="location.href='./signin.php'">Вход</button>
          </div>
       </div>
    </header>

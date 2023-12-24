@@ -8,13 +8,9 @@
 </head>
 
 <body>
-    <?php
-    include './connect.php';
-?>
-
-
 
     <?php
+     include './connect.php';
 
         if (isset($_GET['singup'])) {
             // Получаем данные из формы
@@ -36,54 +32,6 @@
         }
 
         $mysqli->close();
-
-        // if (isset($_POST['user_name'])) {
-        //     if (!ctype_alnum($_POST['user_name'])) {
-        //         $errors[] = 'The username can only contain letters and digits';
-        //     }
-        //     if (strlen($_POST['user_name']) > 30) {
-        //         $errors[] = 'The username cannot be longer than 30 characters';
-        //     }
-        // }
-        // else {
-        //     $errors[] = 'The username field must not be empty';
-        // }
-
-        // if (isset($_POST['user_pass'])) {
-        //     if ($_POST['user_pass'] !== $_POST['user_pass_check']) {
-        //         $errors[] = 'The two passwords did not match';
-        //     }
-        // }
-        // else {
-        //     $errors[]= 'The password field cannot be empty';
-        // }
-
-        // if (!isset($_POST['user_date'])) {
-        //     $errors[] = 'Поле дня рождения обязательно';
-        // }
-
-        // if (!empty($errors)) {
-        //     echo 'Uh-oh....  a couple of fields are not filled in correctly';
-        //     echo '<ul>';
-        //     foreach($errors as $key => $value) {
-        //         echo '<li> '. $value . '</li>' ;
-        //     }
-        //     echo '</ul>';
-        // }
-        // else {
-        //     $sql_insert_data = "INSERT INTO users (user_name, user_pass, user_email, user_date)
-        //     VALUES ('$user_name', '$user_pass', '$user_email', '$user_date')
-        //     ";
-        //     $result = mysqli_query($mysqli, $sql_insert_data);
-        //     if (!$result) {
-        //         echo 'что-то пошло не так при регистрации';
-        //     }
-        //     else {
-        //         echo 'Вы успешно зарегистрировались';
-        //     }
-        // }
-    
-
 ?>
 
     <h3>Sign up</h3>
