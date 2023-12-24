@@ -64,12 +64,14 @@
             // Получаем данные из формы
             $user_name = $_GET['user_name'];
             $user_pass = $_GET['user_pass'];
+            $user_pass = "$user_pass";
             $user_pass_check = $_GET['user_pass_check'];
+            $user_pass_check = "$user_pass_check";
             $user_email = $_GET['user_email'];
             $user_date = $_GET['user_date'];
             $user_level = 3;
             $sql_insert_data = "INSERT INTO users (user_name, user_pass, user_email, user_date, user_level)
-            VALUES ('$user_name', '$user_pass', '$user_email', '$user_date', '$user_level')
+            VALUES ('$user_name', $user_pass, '$user_email', '$user_date', '$user_level')
             ";
            
             if ($mysqli->query($sql_insert_data) === TRUE) {

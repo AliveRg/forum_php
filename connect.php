@@ -23,7 +23,10 @@
      $db_db
    );
 
-   session_start();
+   if(!isset($_SESSION)) 
+   { 
+       session_start(); 
+   }
     if (!isset($_SESSION['signed_in'])) {
         $_SESSION['signed_in'] = false;
     }

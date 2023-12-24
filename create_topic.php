@@ -47,7 +47,7 @@
    $topic_subject = $_POST['topic_subject'];
    $topic_date = date('Y-m-d H:i:s');
    $topic_cat = $cat_id;
-   $topic_by = $cat_id;
+   $topic_by = $_SESSION['user_id'];
       $sql_insert_category = "INSERT INTO topics (topic_subject, topic_date, topic_cat, topic_by) VALUES ('$topic_subject', '$topic_date', '$topic_cat', '$topic_by')";
 
       if ($mysqli->query($sql_insert_category) === TRUE) {
