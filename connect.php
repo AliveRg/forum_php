@@ -23,22 +23,22 @@
      $db_db
    );
     
-   if ($mysqli->connect_error) {
-     echo 'Errno: '.$mysqli->connect_errno;
-     echo '<br>';
-     echo 'Error: '.$mysqli->connect_error;
-     exit();
-   }
+   // if ($mysqli->connect_error) {
+   //   echo 'Errno: '.$mysqli->connect_errno;
+   //   echo '<br>';
+   //   echo 'Error: '.$mysqli->connect_error;
+   //   exit();
+   // }
  
-   echo 'Success: A proper connection to MySQL was made.';
-   echo '<br>';
-   echo 'Host information: '.$mysqli->host_info;
-   echo '<br>';
-   echo 'Protocol version: '.$mysqli->protocol_version;
-   // Проверяем соединение
-   if ($mysqli->connect_error) {
-      die("Connection failed: " . $mysqli->connect_error);
-   } 
+   // echo 'Success: A proper connection to MySQL was made.';
+   // echo '<br>';
+   // echo 'Host information: '.$mysqli->host_info;
+   // echo '<br>';
+   // echo 'Protocol version: '.$mysqli->protocol_version;
+   // // Проверяем соединение
+   // if ($mysqli->connect_error) {
+   //    die("Connection failed: " . $mysqli->connect_error);
+   // } 
 
 // SQL-запрос для создания таблицы
 // Таблица пользователей
@@ -57,11 +57,11 @@ CREATE TABLE IF NOT EXISTS users (
 
 
 // Выполняем запрос
-if ($mysqli->query($sql_create_table) === TRUE) {
-   echo "<br> Table created successfully";
-} else {
-   echo "Error creating table:  " . $mysqli->error;
-}
+// if ($mysqli->query($sql_create_table) === TRUE) {
+//    echo "<br> Table created successfully";
+// } else {
+//    echo "Error creating table:  " . $mysqli->error;
+// }
 
 
 $sql_create_table1 = "
@@ -73,11 +73,11 @@ CREATE TABLE IF NOT EXISTS categories (
 ";
 
 
-if ($mysqli->query($sql_create_table1) === TRUE) {
-   echo "<br> Table created successfully";
-} else {
-   echo "Error creating table: " . $mysqli->error;
-};
+// if ($mysqli->query($sql_create_table1) === TRUE) {
+//    echo "<br> Table created successfully";
+// } else {
+//    echo "Error creating table: " . $mysqli->error;
+// };
 
 $sql_create_table2 = "
 CREATE TABLE IF NOT EXISTS topics (
@@ -91,11 +91,11 @@ CREATE TABLE IF NOT EXISTS topics (
 ) ENGINE=INNODB;
 ";
 
-if ($mysqli->query($sql_create_table2) === TRUE) {
-   echo "<br> Table created successfully";
-} else {
-   echo "Error creating table: " . $mysqli->error;
-};
+// if ($mysqli->query($sql_create_table2) === TRUE) {
+//    echo "<br> Table created successfully";
+// } else {
+//    echo "Error creating table: " . $mysqli->error;
+// };
 
 // Таблица сообщений
 $sql_create_table3 = "
@@ -110,13 +110,13 @@ CREATE TABLE IF NOT EXISTS posts (
 ) ENGINE=INNODB;
 ";
 
-if ($mysqli->query($sql_create_table3) === TRUE) {
-   echo "<br> Table created successfully";
-} else {
-   echo "Error creating table: " . $mysqli->error;
-};
+// if ($mysqli->query($sql_create_table3) === TRUE) {
+//    echo "<br> Table created successfully";
+// } else {
+//    echo "Error creating table: " . $mysqli->error;
+// };
 // Закрываем соединение с базой данных
-$mysqli->close();
+
 ?>
 </body>
 
