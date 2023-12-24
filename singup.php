@@ -19,22 +19,19 @@
         if (isset($_GET['singup'])) {
             // Получаем данные из формы
             $user_name = $_GET['user_name'];
-            $user_pass = $_POST['user_pass'];
-            $user_pass_check = $_POST['user_pass_check'];
-            $user_email = $_POST['user_email'];
-            $user_date = $_POST['user_date'];
-
-            echo $user_name ;
-
-            $sql_insert_data = "INSERT INTO users (user_name, user_pass, user_email, user_date)
-            VALUES ('$user_name', '$user_pass', '$user_email', '$user_date')
+            $user_pass = $_GET['user_pass'];
+            $user_pass_check = $_GET['user_pass_check'];
+            $user_email = $_GET['user_email'];
+            $user_date = $_GET['user_date'];
+            $user_level = 3;
+            $sql_insert_data = "INSERT INTO users (user_name, user_pass, user_email, user_date, user_level)
+            VALUES ('$user_name', '$user_pass', '$user_email', '$user_date', '$user_level')
             ";
-            $result = mysqli_query($mysqli, $sql_insert_data);
-            if (!$result) {
-                echo 'что-то пошло не так при регистрации';
-            }
-            else {
-                echo 'Вы успешно зарегистрировались';
+           
+            if ($mysqli->query($sql_insert_data) === TRUE) {
+                echo "Data inserted successfully";
+            } else {
+                echo "Error inserting data: " . $conn->error;
             }
         }
 
