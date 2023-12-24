@@ -9,8 +9,7 @@
 
 <body>
    <?php
-   error_reporting(E_ALL);
-   ini_set('display_errors', 1);
+
    
    $db_host = 'localhost';
    $db_user = 'root';
@@ -36,12 +35,10 @@
    echo 'Host information: '.$mysqli->host_info;
    echo '<br>';
    echo 'Protocol version: '.$mysqli->protocol_version;
-// Проверяем соединение
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
-} else {
-   die("Connection sucsess ");
-}
+   // Проверяем соединение
+   if ($mysqli->connect_error) {
+      die("Connection failed: " . $mysqli->connect_error);
+   } 
 
 // SQL-запрос для создания таблицы
 // Таблица пользователей
@@ -67,47 +64,47 @@ if ($mysqli->query($sql_create_table) === TRUE) {
 }
 
 
-// // Таблица категорий
-// $sql_create_table1 = "
-// CREATE TABLE categories (
-// cat_id INT(8) NOT NULL AUTO_INCREMENT,
-// cat_name VARCHAR(255) NOT NULL,
-// cat_description VARCHAR(255) NOT NULL, 
-// UNIQUE INDEX cat_name_unique (cat_name), 
-// PRIMARY KEY (cat_id)
-// ) ENGINE=INNODB;
+// Таблица категорий
+$sql_create_table1 = "
+CREATE TABLE categories (
+cat_id INT(8) NOT NULL AUTO_INCREMENT,
+cat_name VARCHAR(255) NOT NULL,
+cat_description VARCHAR(255) NOT NULL, 
+UNIQUE INDEX cat_name_unique (cat_name), 
+PRIMARY KEY (cat_id)
+) ENGINE=INNODB;
 
-// ";
+";
 
-// // Таблица тем
-// $sql_create_table2 = "
-// CREATE TABLE topics (
-//    topic_id INT(8) NOT NULL AUTO_INCREMENT,
-//    topic_subject VARCHAR(255) NOT NULL,
-//    topic_date DATETIME NOT NULL,
-//    topic_cat INT(8) NOT NULL,
-//    topic_by INT(8) NOT NULL, 
-//    PRIMARY KEY (topic_id) 
-//    ) ENGINE=INNODB;
-// ";
+// Таблица тем
+$sql_create_table2 = "
+CREATE TABLE topics (
+   topic_id INT(8) NOT NULL AUTO_INCREMENT,
+   topic_subject VARCHAR(255) NOT NULL,
+   topic_date DATETIME NOT NULL,
+   topic_cat INT(8) NOT NULL,
+   topic_by INT(8) NOT NULL, 
+   PRIMARY KEY (topic_id) 
+   ) ENGINE=INNODB;
+";
 
-// // Таблица сообщений
-// $sql_create_table3 = "
-// CREATE TABLE posts (
-//    post_id INT(8) NOT NULL AUTO_INCREMENT,
-//    post_content TEXT NOT NULL,
-//    post_date DATETIME NOT NULL,
-//    post_topic INT(8) NOT NULL,
-//    post_by INT(8) NOT NULL, 
-//    PRIMARY KEY (post_id) 
-//    ) ENGINE=INNODB;
-// ";
+// Таблица сообщений
+$sql_create_table3 = "
+CREATE TABLE posts (
+   post_id INT(8) NOT NULL AUTO_INCREMENT,
+   post_content TEXT NOT NULL,
+   post_date DATETIME NOT NULL,
+   post_topic INT(8) NOT NULL,
+   post_by INT(8) NOT NULL, 
+   PRIMARY KEY (post_id) 
+   ) ENGINE=INNODB;
+";
 
-// if ($mysqli->query($sql_create_table) === TRUE) {
-//    echo "Table created successfully";
-// } else {
-//    echo "Error creating table: " . $mysqli->error;
-// };
+if ($mysqli->query($sql_create_table) === TRUE) {
+   echo "Table created successfully";
+} else {
+   echo "Error creating table: " . $mysqli->error;
+};
 // Закрываем соединение с базой данных
 $mysqli->close();
 ?>
