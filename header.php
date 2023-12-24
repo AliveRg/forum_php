@@ -61,7 +61,7 @@
 
    <header>
       <div class="header_wrapper">
-         <h1>Название сайта</h1>
+         <h1>Форум</h1>
          <nav>
             <a href="#">Главная</a>
             <a href="#">О нас</a>
