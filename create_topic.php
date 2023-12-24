@@ -54,14 +54,15 @@
      
 
       echo '<form action="" method="GET">
-      <label for="cat_name">Название категории:</label>
+      <label for="cat_name">Название темы:</label>
       <input type="text" id="cat_name" name="cat_name" required>
 
-      <label for="cat_description">Описание категории:</label>
+      <label for="cat_description">Описание темы:</label>
       <textarea id="cat_description" name="cat_description" required></textarea>
 
-      <input type="submit" value="Добавить категорию" name="formsub">
-   </form>';
+      <input type="submit" value="Добавить тему" name="formsub">
+      </form>';
+
       if (isset($_GET['formsub'])) { 
          $cat_name = $_GET['cat_name'];
          $cat_description = $_GET['cat_description'];

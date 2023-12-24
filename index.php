@@ -35,13 +35,15 @@
     if ($result->num_rows > 0) {
         // Выводим данные
         while($row = mysqli_fetch_assoc($result)) {
-          echo "<div class='container'>";
-          
-         
-          echo "<h2 class='field'> " . $row["cat_name"] . "</h2>";
-          echo "<h4 class='field'> " . $row["cat_description"] . "</h4>";
-        echo "</div>";
-          echo "<hr>";
+            ?>
+            <div class='container'>
+                <h2 class='field'><?=  $row["cat_name"] ?></h2>
+                <h4 class='field'><?= $row["cat_description"] ?></h4>
+                <button onclick="location.href='./create_topic.php'">Добавить тему</button>
+
+            </div>
+            <hr>
+          <?php
       }
       
     
@@ -55,6 +57,7 @@
 
     include './footer.php';
 ?>
+
 
 
 
