@@ -27,7 +27,6 @@
 <?php
     include './connect.php';
     include './header.php';
-
     // SQL-запрос для выборки всех данных из таблицы
     $sql_select_data = "SELECT * FROM categories";
     $result = $mysqli->query($sql_select_data);

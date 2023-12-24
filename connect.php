@@ -22,6 +22,12 @@
      $db_password,
      $db_db
    );
+
+   session_start();
+    if (!isset($_SESSION['signed_in'])) {
+        $_SESSION['signed_in'] = false;
+    }
+
     
    // if ($mysqli->connect_error) {
    //   echo 'Errno: '.$mysqli->connect_errno;
