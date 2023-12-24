@@ -68,8 +68,7 @@
          <h1>Форум</h1>
          <nav>
             <a href="./index.php">Главная</a>
-            <a href="#">О нас</a>
-            <a href="#">Контакты</a>
+            <a href="./create_topic.php">Создание темы</a>
             <a href="./create_cat.php">Создание категории</a>
          </nav>
          <div class="button-container">

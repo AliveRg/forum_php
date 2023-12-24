@@ -22,7 +22,7 @@
             height: 10px;
         }
 
-        .topic_button {
+        .topic_button, .cat_button {
             text-decoration: none;
             color: #000;
             transition: all 0.2s ease-out allow-discrete;
@@ -31,7 +31,7 @@
             padding: 5px 10px;
         }
 
-        .topic_button:hover {
+        .topic_button:hover, .cat_button:hover {
             background-color: #0f0f0f;
             color: #fff
         }
@@ -53,6 +53,7 @@
     <h2 class='field'><?=  $row["cat_name"] ?></h2>
     <h4 class='field'><?= $row["cat_description"] ?></h4>
     <a class="topic_button" href="./create_topic.php?cat_id=<?=  $row["cat_id"] ?>">edit</a>
+    <a class="cat_button" href=".showCategory/.php?cat_id=<?=  $row["cat_id"] ?>">Show</a>
 
 </div>
 <hr>

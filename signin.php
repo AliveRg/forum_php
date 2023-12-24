@@ -69,7 +69,7 @@
             $user_name = $_GET['user_name'];
             $user_pass = $_GET['user_pass'];
     
-            $sql = "SELECT user_id, user_name, user_level FROM users WHERE user_name = '$user_name' AND user_pass = $user_pass";
+            $sql = "SELECT user_id, user_name, user_level FROM users WHERE user_name = '$user_name' AND user_pass = '$user_pass'";
 
             $result = $mysqli->query($sql);
 
