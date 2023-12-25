@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <style>
-
-
-        body, p {
+        body,
+        p {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         h1 {
             margin: 20px;
         }
 
         form {
-            margin: 20px;
+            margin: 0 auto;
             width: 500px;
             display: flex;
             flex-direction: column;
@@ -48,7 +49,8 @@
             display: flex;
         }
 
-        .post div, .topic div {
+        .post div,
+        .topic div {
             width: 20%;
             display: flex;
             flex-direction: column;
@@ -57,10 +59,10 @@
             border-right: 1px solid black;
             margin-right: 10px;
         }
-        
     </style>
-    
+
 </head>
+
 <body>
     
 
@@ -84,16 +86,16 @@
                 $user = $mysqli->query($sql_select_data1);
                 $user = mysqli_fetch_all($user);
            ?>
-           <div class="topic">
-            <div >
-                <p><?= $user[0][0] ?></p>
-                <p><?= $row['topic_date'] ?></p>
-                
-            </div>
-            <h1><?= $row['topic_subject'] ?></h1>
-           </div>
-           
-            <?php
+    <div class="topic">
+        <div>
+            <p><?= $user[0][0] ?></p>
+            <p><?= $row['topic_date'] ?></p>
+
+        </div>
+        <h1><?= $row['topic_subject'] ?></h1>
+    </div>
+
+    <?php
         }}}
         
         $sql_select_data1 = "SELECT * FROM posts WHERE post_topic=$topic_id";
@@ -107,14 +109,14 @@
                 $user = mysqli_fetch_all($user);
 
                 ?>
-                <div class="post">
-                <div>
-                    <p><?= $user[0][0];?></p>
-                    <p><?= $row['post_date'] ?></p>
-                </div>
-                <h3><?= $row['post_content'] ?></h3> 
-            </div>            
-         <?php
+    <div class="post">
+        <div>
+            <p><?= $user[0][0];?></p>
+            <p><?= $row['post_date'] ?></p>
+        </div>
+        <h3><?= $row['post_content'] ?></h3>
+    </div>
+    <?php
         }}
         
 
@@ -135,26 +137,26 @@
         if ($mysqli->query($sql_insert_post) === TRUE) {
             
             ?>
-            
-            <div class="post">
-                <div>
-                    <p><?= $_SESSION['user_name'] ?></p>
-                    <p><?= $post_date ?></p>
-                </div>
-                <h3><?= $post ?></h3> 
-            </div>
-            <p id="sucssesResult">Каментарий успешно добавлен</p>
-            <script>
-                const vidget = document.getElementById('sucssesResult')
-                console.log('1',vidget);
-                vidget.style.color = 'green'
-                setTimeout(() => hideVidget(), 5000)
-                function hideVidget() {
-                vidget.style.display = "none";
-                }
-            
-            </script>
-            <?php
+
+    <div class="post">
+        <div>
+            <p><?= $_SESSION['user_name'] ?></p>
+            <p><?= $post_date ?></p>
+        </div>
+        <h3><?= $post ?></h3>
+    </div>
+    <p id="sucssesResult">Каментарий успешно добавлен</p>
+    <script>
+        const vidget = document.getElementById('sucssesResult')
+        console.log('1', vidget);
+        vidget.style.color = 'green'
+        setTimeout(() => hideVidget(), 5000)
+
+        function hideVidget() {
+            vidget.style.display = "none";
+        }
+    </script>
+    <?php
                 } else {
                     echo "Ошибка при добавлении комментария: " . $mysqli->error;
                 }
@@ -166,17 +168,16 @@
        
    ?>
 
-   <form action="" method="post" name="addPost">
+    <form action="" method="post" name="addPost" class="form_comment">
         <input type="hidden" name="edit_id" value="<?php echo $row["cat_id"]; ?>">
-      <label for="reply_topic">Комментарий:</label>
-      <textarea type="text" id="reply_topic" name="reply_topic" required></textarea>
-      <input type="submit" class="submit" value="Добавить комментарий" name="addPost">
-   </form>
+        <label for="reply_topic">Комментарий:</label>
+        <textarea type="text" id="reply_topic" name="reply_topic" required></textarea>
+        <input type="submit" class="submit" value="Добавить комментарий" name="addPost">
+    </form>
 
-    </div>
-
-   <?php 
+    <?php 
         include './footer.php'
-    ?>    
+    ?>
 </body>
+
 </html>
