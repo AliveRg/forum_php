@@ -72,19 +72,19 @@
             while($row = mysqli_fetch_assoc($result)) {
                 ?>
 
-            <div class='container'>
-                <div class="" style="display: flex;   justify-content: space-between; width: 100%;">
-                    <h2 class='field'><?= $row['topic_subject'] ?></h2>
-                    <a class="add_com" href="./reply.php?topic_id=<?= $row['topic_id'] ?>">перейти к теме<a>
-                </div>
-                <div class="" style="display: flex;   justify-content: space-between; width: 100%;">
-                    <h4 class='field'><?= $row['topic_date'] ?></h4>
-                    <h4 class='field'><?= $row['topic_by'] ?></h4>
-                </div>
+    <div class='container'>
+        <div class="" style="display: flex;   justify-content: space-between; width: 100%;">
+            <h2 class='field'><?= $row['topic_subject'] ?></h2>
+            <a class="add_com" href="./reply.php?topic_id=<?= $row['topic_id'] ?>">перейти к теме</a>
+        </div>
+        <div class="" style="display: flex;   justify-content: space-between; width: 100%;">
+            <h4 class='field'><?= $row['topic_date'] ?></h4>
+            <h4 class='field'><?= $row['topic_by'] ?></h4>
+        </div>
 
 
-            </div>
-            <hr>
+    </div>
+    <hr>
     <?php
           }
         } else {

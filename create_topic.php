@@ -8,7 +8,12 @@
    <style>
       form {
          max-width: 400px;
-         margin: auto;
+         margin: 0 auto;
+      }
+
+      .form_comment {
+         max-width: 400px;
+         margin: 0 auto;
       }
 
       label {
