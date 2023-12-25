@@ -7,6 +7,7 @@
 
     <style>
 
+
         body, p {
             box-sizing: border-box;
             margin: 0;
@@ -61,13 +62,13 @@
     
 </head>
 <body>
-
+    
 
 
     <?php
        include './connect.php';
        include './header.php';
-       
+       echo '<div>';
    
        if (isset($_GET['topic_id'])) {
            $topic_id = $_GET['topic_id'];
@@ -171,6 +172,8 @@
       <textarea type="text" id="reply_topic" name="reply_topic" required></textarea>
       <input type="submit" class="submit" value="Добавить комментарий" name="addPost">
    </form>
+
+    </div>
 
    <?php 
         include './footer.php'

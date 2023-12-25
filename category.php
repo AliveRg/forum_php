@@ -45,7 +45,12 @@
 
 <body>
 
+    <?php
+        include './connect.php';
+        include './header.php';
+    ?>
 
+    <section>
     <?php
     include './connect.php';
     include './header.php';
@@ -75,7 +80,7 @@
             <div class='container'>
                 <div class="" style="display: flex;   justify-content: space-between; width: 100%;">
                     <h2 class='field'><?= $row['topic_subject'] ?></h2>
-                    <a class="add_com" href="./reply.php?topic_id=<?= $row['topic_id'] ?>">перейти к теме<a>
+                    <a class="add_com" href="./reply.php?topic_id=<?= $row['topic_id'] ?>">перейти к теме</a>
                 </div>
                 <div class="" style="display: flex;   justify-content: space-between; width: 100%;">
                     <h4 class='field'><?= $row['topic_date'] ?></h4>
@@ -93,9 +98,10 @@
     } else {
         echo 'Не передан ID записи';
     }
+    ?>
+    </section>
 
-    
-
+<?php
 
     include './footer.php'
 ?>
